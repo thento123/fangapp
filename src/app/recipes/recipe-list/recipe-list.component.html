@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- this part should be dynamcally created and repeated for the whole amount of items in the array-->
+        <a *ngFor="let rec of recipes" href="#" class="list-group-item clearfix">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ rec.name }}</h4><!--name should be dynamically placed -->
+                <p class="list-group-item-text">{{ rec.description }}</p><!--description should be dynamically generated -->
+            </div>
+            <span class="pull-right">
+                <img [src]="rec.imagePath" alt="" class="img-responsive" style="max-height: 50px;"><!--the src should be taken from the array -->
+            </span>
+        </a>
+        <!--  until here -->
+        <app-recipe-item></app-recipe-item>
+    </div>
+</div>
